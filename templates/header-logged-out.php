@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg nav">
+        <nav class="navbar navbar-expand-lg nav fixed-top">
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="index-logged-out.php" title="View All Active Listings">Used Cars</a>

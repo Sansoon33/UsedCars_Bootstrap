@@ -36,7 +36,7 @@ include('templates/header-logged-in.php');
             echo $no_cars;
         } else {
         ?>
-    <table class="listings">
+    <table class="table table-striped table-hover listings">
         <thead>
             <tr>
                 <th><strong>Make</strong></th>

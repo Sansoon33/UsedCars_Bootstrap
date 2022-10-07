@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Registration</h1>
             <br>
             <!-- Form -->
-            <form name="registration" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validateUserRegForm()">
+            <form id="carForm" name="registration" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validateUserRegForm()">
                 <!-- User Inputs -->
                 <label for="username" class="form-label">Username: </label>
                 <input id="username" class="form-control" type="text" name="username" placeholder="Ex: Skipper33" value="<?= (isset($username)) ? $username : ''; ?>" />

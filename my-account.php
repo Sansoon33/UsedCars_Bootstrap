@@ -32,58 +32,68 @@ if (isset($_SESSION['user_id'])) {
 
 <!-- Body -->
 <div class="container mt-5">
-    <h1 class="text-center"> Account Information</h1>
+    <div class="row">
+        <div class="col">
 
-    <p class="text-center">
-        Here is your account information.
-    </p>
+        </div>
+        <div class="col">
+            <h1 class="text-center"> Account Information</h1>
 
-    <p class="text-center">You can edit or delete your account here.</p>
+            <p class="text-center">
+                Here is your account information.
+            </p>
 
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['username'];
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+            <p class="text-center">You can edit or delete your account here.</p>
 
-        if ($password == $rows['password']) {
-            $update = "UPDATE `users` set username='" . $username . "', first_name='" . $fname . "', last_name='" . $lname . "', 
-            phone_number='" . $phone . "', email='" . $email . "', password='" . $password . "' WHERE user_id='$user_id';";
-        } else {
-            $update = "UPDATE `users` set username='" . $username . "', first_name='" . $fname . "', last_name='" . $lname . "', 
-            phone_number='" . $phone . "', email='" . $email . "', password='" . md5($password) . "' WHERE user_id='" . $user_id . "';";
-        }
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $username = $_POST['username'];
+                $fname = $_POST['fname'];
+                $lname = $_POST['lname'];
+                $phone = $_POST['phone'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
 
-        $result2 = mysqli_query($con, $update);
+                if ($password == $rows['password']) {
+                    $update = "UPDATE `users` set username='" . $username . "', first_name='" . $fname . "', last_name='" . $lname . "', 
+        phone_number='" . $phone . "', email='" . $email . "', password='" . $password . "' WHERE user_id='$user_id';";
+                } else {
+                    $update = "UPDATE `users` set username='" . $username . "', first_name='" . $fname . "', last_name='" . $lname . "', 
+        phone_number='" . $phone . "', email='" . $email . "', password='" . md5($password) . "' WHERE user_id='" . $user_id . "';";
+                }
 
-        if ($result2) {
-            $status = "<p style='font-size:15pt; text-align:center;'>You have successfully updated your account. <a href='userdashboard.php'>Return to Dashboard here!</a></p>";
-            echo $status;
-        } else {
-            $status = "<p style='font-size:15pt text-align:center;'>Update unsuccessful.<a href='my-account.php'> Try again here.</a></p>";
-            echo $status;
-        }
-    } else {
-    ?>
+                $result2 = mysqli_query($con, $update);
 
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
-            <label for="username">Username: </label>
-            <input type="text" name="username" value="<?php echo $rows['username'] ?>" /><br />
-            <label for="fname">First Name: </label>
-            <input type="text" name="fname" value="<?php echo $rows['first_name'] ?>" /><br />
-            <label for="fname">Last Name: </label>
-            <input type="text" name="lname" value="<?php echo $rows['last_name'] ?>" /><br />
-            <label for="phone">Phone Number: </label>
-            <input type="text" name="phone" value="<?php echo $rows['phone_number'] ?>" /><br />
-            <label for="email">Email: </label>
-            <input type="text" name="email" value="<?php echo $rows['email'] ?>" /><br />
-            <label for="password">Password: </label>
-            <input type="password" name="password" value="<?php echo $rows['password'] ?>" /><br /><br />
-            <input type="submit" name="update" value="Update Account" class="bottom-btn" /><br />
-            <a href="delete-account.php?user_id=<?php echo $rows['user_id'] ?>"><input type="button" value="Delete Account" class="bottom-btn back"></a>
-        </form>
-    <?php } ?>
+                if ($result2) {
+                    $status = "<p style='font-size:15pt; text-align:center;'>You have successfully updated your account. <a href='userdashboard.php'>Return to Dashboard here!</a></p>";
+                    echo $status;
+                } else {
+                    $status = "<p style='font-size:15pt text-align:center;'>Update unsuccessful.<a href='my-account.php'> Try again here.</a></p>";
+                    echo $status;
+                }
+            } else {
+            ?>
+
+                <form id="carForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="form">
+                    <label for="username" class="form-label">Username: </label>
+                    <input type="text" class="form-control" name="username" value="<?php echo $rows['username'] ?>" /><br />
+                    <label for="fname" class="form-label">First Name: </label>
+                    <input type="text" class="form-control" name="fname" value="<?php echo $rows['first_name'] ?>" /><br />
+                    <label for="fname" class="form-label">Last Name: </label>
+                    <input type="text" class="form-control" name="lname" value="<?php echo $rows['last_name'] ?>" /><br />
+                    <label for="phone" class="form-label">Phone Number: </label>
+                    <input type="text" class="form-control" name="phone" value="<?php echo $rows['phone_number'] ?>" /><br />
+                    <label for="email" class="form-label">Email: </label>
+                    <input type="text" class="form-control" name="email" value="<?php echo $rows['email'] ?>" /><br />
+                    <label for="password" class="form-label">Password: </label>
+                    <input type="password" class="form-control" name="password" value="<?php echo $rows['password'] ?>" /><br /><br />
+                    <input type="submit" name="update" value="Update Account" class="bottom-btn" /><br />
+                    <a href="delete-account.php?user_id=<?php echo $rows['user_id'] ?>"><input type="button" value="Delete Account" class="bottom-btn back"></a>
+                </form>
+            <?php } ?>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+
 </div>

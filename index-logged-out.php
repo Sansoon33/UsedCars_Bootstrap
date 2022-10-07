@@ -52,11 +52,11 @@ include('templates/header-logged-out.php');
             <?php
                 while ($rows = mysqli_fetch_assoc($listings)) {
                 ?>
-            <tr class="table-light">
+            <tr>
                 <td><?php echo $rows['make']; ?></td>
                 <td><?php echo $rows['model']; ?></td>
                 <td><?php echo $rows['year']; ?></td>
-                <td id="test"><?php echo $rows['mileage'] . " km"; ?></td>
+                <td><?php echo $rows['mileage'] . " km"; ?></td>
                 <td><?php echo $rows['color']; ?></td>
                 <td><?php echo $rows['car_condition']; ?></td>
                 <td><?php echo "$" . $rows['asking_price']; ?></td>

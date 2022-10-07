@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Log In</h2>
             <br>
             <!-- FORM -->
-            <form action="" method="post" name="login">
+            <form id="carForm" action="" method="post" name="login">
                 <!-- User Inputs -->
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>

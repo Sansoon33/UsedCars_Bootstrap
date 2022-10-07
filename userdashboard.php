@@ -57,7 +57,7 @@ if (isset($_SESSION['user_id'])) {
         echo $add_car;
     } else {
     ?>
-    <table class="listings">
+    <table class="table table-striped table-hover listings">
         <thead>
             <tr>
                 <th><strong>Make</strong></th>

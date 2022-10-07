@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light nav">
+        <nav class="navbar navbar-expand-lg nav fixed-top">
             <div class="container-fluid">
 
                 <a class="navbar-brand">Used Cars</a>
