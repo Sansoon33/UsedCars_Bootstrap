@@ -64,10 +64,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Log In</h2>
     <br>
     <!-- FORM -->
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" name="login">
+    <form action="" method="post" name="login">
         <!-- User Inputs -->
-        <input type="text" name="username" placeholder="Username" required />
-        <input type="password" name="password" placeholder="Password" required />
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" required />
+        </div>
         <span class="error"><?php echo $error ?></span>
         <input name="submit" type="submit" value="Login" />
     </form>
