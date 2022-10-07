@@ -66,6 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<head>
+    <title>UsedCars | Add Report</title>
+</head>
 
 <div class="container mt-5">
   <h1 class="text-center">Create Official Contract for Sold Car</h1>

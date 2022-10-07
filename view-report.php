@@ -5,7 +5,9 @@ require('config/auth.php');
 include('templates/header-logged-in.php');
 ?>
 
-
+<head>
+    <title>UsedCars | Reports</title>
+</head>
 
 <div class="container">
     <h1 class="text-center">Current Report</h1><br>

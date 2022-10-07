@@ -20,8 +20,7 @@
         <link rel="icon" href="assets/img/favicon.png">
 
         <!-- Link to JS Bootstrap CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
         </script>
 </head>
 
@@ -29,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light nav">
+        <nav class="navbar navbar-expand-lg nav">
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="index-logged-out.php" title="View All Active Listings">Used Cars</a>
@@ -53,7 +52,7 @@
                 </div>
             </div>
         </nav>
+        <div>
+            <img src="assets\img\hero.jpg" alt="car background" width="100%" height="350px">
+        </div>
     </header>
-</body>
-
-</html>

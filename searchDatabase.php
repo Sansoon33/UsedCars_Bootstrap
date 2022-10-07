@@ -5,7 +5,6 @@ require('config/auth.php');
 include('templates/header-logged-in.php');
 ?>
 
-
 <div class="container mt-5">
     <h1 class="text-center">Search Database</h1><br>
     <p class="text-center">
@@ -163,8 +162,6 @@ include('templates/header-logged-in.php');
         </div>
     </form>
 </div>
-
-
 
 <!-- Footer -->
 <?php include "templates/footer.php" ?>

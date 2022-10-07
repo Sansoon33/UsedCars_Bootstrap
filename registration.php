@@ -134,49 +134,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>UsedCars | Register</title>
 </head>
 
 <div class="form container text-center">
-    <h1>Registration</h1>
-    <br>
-    <!-- Form -->
-    <form name="registration" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validateUserRegForm()">
-        <!-- User Inputs -->
-        <label for="username">Username: </label>
-        <input id="username" type="text" name="username" placeholder="Ex: Skipper33" value="<?= (isset($username)) ? $username : ''; ?>" />
-        <span id="usernameErr" class="error"><?php echo $usernameErr ?></span>
-        <br>
-        <label for="fname">First Name: </label>
-        <input type="text" name="fname" placeholder="Ex: John" value="<?= (isset($fname)) ? $fname : ''; ?>" />
-        <span id="fnameErr" class="error"><?php echo $fnameErr ?></span>
-        <br>
-        <label for="lname">Last Name: </label>
-        <input type="text" name="lname" placeholder="Ex: Kimble" value="<?= (isset($lname)) ? $lname : ''; ?>" />
-        <span id="lnameErr" class="error"><?php echo $lnameErr ?></span>
-        <br>
-        <label for="phone">Phone Number: </label>
-        <input type="text" name="phone" placeholder="Ex: 5556667777" value="<?= (isset($phone)) ? $phone : ''; ?>" />
-        <span id="phoneErr" class="error"><?php echo $phoneErr ?></span>
-        <br>
-        <label for="email">Email: </label>
-        <input type="text" name="email" placeholder="Ex: jkimble@website.ca" value="<?= (isset($email)) ? $email : ''; ?>" />
-        <span id="emailErr" class="error"><?php echo $emailErr ?></span>
-        <br>
-        <label for="password">Password: </label>
-        <input type="password" name="password" />
-        <span id="passwordErr" class="error"><?php echo $passwordErr ?></span>
-        <br>
-        <input id="userRegSubmitBtn" type="submit" name="submit" value="Register" />
-    </form>
-    <p class="registermessage"><?php echo $message ?></p>
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <h1>Registration</h1>
+            <br>
+            <!-- Form -->
+            <form name="registration" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validateUserRegForm()">
+                <!-- User Inputs -->
+                <label for="username" class="form-label">Username: </label>
+                <input id="username" class="form-control" type="text" name="username" placeholder="Ex: Skipper33" value="<?= (isset($username)) ? $username : ''; ?>" />
+                <span id="usernameErr" class="error"><?php echo $usernameErr ?></span>
+                <br>
+                <label for="fname" class="form-label">First Name: </label>
+                <input type="text" class="form-control" name="fname" placeholder="Ex: John" value="<?= (isset($fname)) ? $fname : ''; ?>" />
+                <span id="fnameErr" class="error"><?php echo $fnameErr ?></span>
+                <br>
+                <label for="lname" class="form-label">Last Name: </label>
+                <input type="text" class="form-control" name="lname" placeholder="Ex: Kimble" value="<?= (isset($lname)) ? $lname : ''; ?>" />
+                <span id="lnameErr" class="error"><?php echo $lnameErr ?></span>
+                <br>
+                <label for="phone" class="form-label">Phone Number: </label>
+                <input type="text" class="form-control" name="phone" placeholder="Ex: 5556667777" value="<?= (isset($phone)) ? $phone : ''; ?>" />
+                <span id="phoneErr" class="error"><?php echo $phoneErr ?></span>
+                <br>
+                <label for="email" class="form-label">Email: </label>
+                <input type="text" class="form-control" name="email" placeholder="Ex: jkimble@website.ca" value="<?= (isset($email)) ? $email : ''; ?>" />
+                <span id="emailErr" class="error"><?php echo $emailErr ?></span>
+                <br>
+                <label for="password" class="form-label">Password: </label>
+                <input type="password" class="form-control" name="password" />
+                <span id="passwordErr" class="error"><?php echo $passwordErr ?></span>
+                <br>
+                <input id="userRegSubmitBtn" type="submit" name="submit" value="Register" />
+            </form>
+            <p class="registermessage"><?php echo $message ?></p>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+
+
 
 </div>
 

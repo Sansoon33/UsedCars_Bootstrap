@@ -1,0 +1,22 @@
+.listings>thead>tr>th {
+    text-align: center;
+    
+}
+
+.listings>thead>tr {
+    background-color:lightskyblue;
+}
+
+.listings>tbody>tr>td {
+    text-align: center;
+}
+
+nav, footer {
+    background-color: lightskyblue;
+}
+
+body {
+    margin-bottom:50px;  
+}
+
+

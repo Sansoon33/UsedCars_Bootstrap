@@ -4,12 +4,7 @@ require('config/db.php');
 include('templates/header-logged-out.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UsedCars | Homepage</title>
 </head>
 
@@ -40,7 +35,7 @@ include('templates/header-logged-out.php');
         echo $no_cars;
     } else {
     ?>
-    <table class="listings">
+    <table class="table table-striped table-hover listings">
         <thead>
             <tr>
                 <th><strong>Make</strong></th>
@@ -57,40 +52,21 @@ include('templates/header-logged-out.php');
             <?php
                 while ($rows = mysqli_fetch_assoc($listings)) {
                 ?>
-            <tr>
-                <td align="center"><?php echo $rows['make']; ?></td>
-                <td align="center"><?php echo $rows['model']; ?></td>
-                <td align="center"><?php echo $rows['year']; ?></td>
-                <td align="center"><?php echo $rows['mileage'] . " km"; ?></td>
-                <td align="center"><?php echo $rows['color']; ?></td>
-                <td align="center"><?php echo $rows['car_condition']; ?></td>
-                <td align="center"><?php echo "$" . $rows['asking_price']; ?></td>
-                <td align="center"><?php echo $rows['date_posted']; ?></td>
+            <tr class="table-light">
+                <td><?php echo $rows['make']; ?></td>
+                <td><?php echo $rows['model']; ?></td>
+                <td><?php echo $rows['year']; ?></td>
+                <td id="test"><?php echo $rows['mileage'] . " km"; ?></td>
+                <td><?php echo $rows['color']; ?></td>
+                <td><?php echo $rows['car_condition']; ?></td>
+                <td><?php echo "$" . $rows['asking_price']; ?></td>
+                <td><?php echo $rows['date_posted']; ?></td>
             </tr>
             <?php } ?>
         </tbody>
     </table>
     <?php } ?>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Footer -->
 <?php include "templates/footer.php" ?>

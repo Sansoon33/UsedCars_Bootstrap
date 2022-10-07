@@ -5,12 +5,7 @@ include('config/auth.php');
 include('templates/header-logged-in.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UsedCars | Homepage</title>
 </head>
 
