@@ -90,7 +90,7 @@ $rows = mysqli_fetch_assoc($result);
             <br>
 
             <input name="submit" type="submit" value="Update" />
-            <a href="userdashboard.php"><input type="button" value="Go Back" class="bottom-btn back"></a>
+            <a href="user-dashboard.php"><input type="button" value="Go Back" class="bottom-btn back"></a>
             <br />
         </form>
         <?php } ?>

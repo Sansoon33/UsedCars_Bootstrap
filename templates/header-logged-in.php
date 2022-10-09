@@ -31,8 +31,6 @@
         <nav class="navbar navbar-expand-lg nav fixed-top">
             <div class="container-fluid">
 
-                <a class="navbar-brand">Used Cars</a>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -56,13 +54,13 @@
                         #check if admin or user -> enable or disable links 
                         if ($row['usertype'] == 'admin') { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="adminDashboard.php">Dashboard</a>
+                                <a class="nav-link" href="admin-dashboard.php">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="view-accounts.php">View All Accounts</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="searchDatabase.php">Search Database</a>
+                                <a class="nav-link" href="search-database.php">Search Database</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link " href="view-report.php">Reports</a>
@@ -70,10 +68,10 @@
 
                         <?php } else { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="index-logged-in.php">Home</a>
+                                <a class="nav-link" href="user-dashboard.php">Your Listings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="userdashboard.php">Dashboard</a>
+                                <a class="nav-link" href="available-listings.php">Available Listings</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="my-account.php">My Account</a>
