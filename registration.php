@@ -145,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         </div>
         <div class="col">
-            <h1>Registration</h1>
+            <h1 id="helloWorld">Registration</h1>
             <br>
             <!-- Form -->
             <form id="carForm" name="registration" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="return validateUserRegForm()">

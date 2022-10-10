@@ -44,7 +44,7 @@ if (isset($_REQUEST['user_id'])) {
         <input type="text" name="phone" value="<?php echo $rows['phone_number'] ?>" readonly /><br />
         <label for="email">Email: </label>
         <input type="text" name="email" value="<?php echo $rows['email'] ?>" readonly /><br /><br />
-        <a href="index-logged-in.php"><input type="button" class="bottom-btn back" value="Go Back"></a>
+        <a href="available-listings.php"><input type="button" class="bottom-btn back" value="Go Back"></a>
     </form>
 </div>
 
