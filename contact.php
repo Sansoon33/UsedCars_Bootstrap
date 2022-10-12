@@ -37,14 +37,14 @@ if (isset($_REQUEST['user_id'])) {
 
     <p class="text-center">Contact them if you are interested in the car! </p>
 
-    <form action="" method="post" name="form">
-        <label for="name">Name: </label>
-        <input type="text" name="name" value="<?php echo $rows['first_name'] . " " . $rows['last_name']?>" readonly /><br />
-        <label for="phone">Phone Number: </label>
-        <input type="text" name="phone" value="<?php echo $rows['phone_number'] ?>" readonly /><br />
-        <label for="email">Email: </label>
-        <input type="text" name="email" value="<?php echo $rows['email'] ?>" readonly /><br /><br />
-        <a href="available-listings.php"><input type="button" class="bottom-btn back" value="Go Back"></a>
+    <form id="carForm2" action="" method="post" name="form">
+        <label for="name" class="form-label">Name: </label>
+        <input type="text" class="form-control" name="name" value="<?php echo $rows['first_name'] . " " . $rows['last_name'] ?>" readonly /><br />
+        <label for="phone" class="form-label">Phone Number: </label>
+        <input type="text" class="form-control" name="phone" value="<?php echo $rows['phone_number'] ?>" readonly /><br />
+        <label for="email" class="form-label">Email: </label>
+        <input type="text" class="form-control" name="email" value="<?php echo $rows['email'] ?>" readonly /><br /><br />
+        <a href="available-listings.php"><input type="button" class="btn btn-primary" value="Go Back"></a>
     </form>
 </div>
 

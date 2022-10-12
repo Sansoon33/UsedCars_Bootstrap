@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input name="submit" type="submit" value="Login" />
             </form>
             <br>
-            <p class="notreg">&nbsp Not registered yet? <a href='registration.php'>Register Here</a> &nbsp</p>
+            <p class="notreg">&nbsp Not registered yet? <a class="btn btn-link" href='registration.php'>Register Here</a> &nbsp</p>
         </div>
         <div class="col">
 

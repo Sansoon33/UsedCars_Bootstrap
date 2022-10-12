@@ -27,22 +27,22 @@ include('templates/header-logged-in.php');
         echo $add_report;
     } else {
     ?>
-        <table class="listings">
+        <table class="table table-striped table-hover listings">
             <thead>
                 <tr>
-                    <th><strong>Contract ID</strong></th>
+                    <th>Contract ID</th>
                     
-                    <th><strong>Username</strong></th>
-                    <th><strong>Phone Number</strong></th>
-                    <th><strong>Email</strong></th>
-                    <th><strong>Make</strong></th>
-                    <th><strong>Mileage</strong></th>
-                    <th><strong>Date Posted</strong></th>
-                    <th><strong>Asking Price</strong></th>
-                    <th><strong>Date of Sale</strong></th>
-                    <th><strong>Final Price</strong></th>
-                    <th><strong>Status</strong></th>
-                    <th><strong><button id="generate-report"><a href="add-report.php"> Add new Contract</a></button></strong></th>
+                    <th>Username</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Make</th>
+                    <th>Mileage</th>
+                    <th>Date Posted</th>
+                    <th>Asking Price</th>
+                    <th>Date of Sale</th>
+                    <th>Final Price</th>
+                    <th>Status</th>
+                    <th><button class="btn btn-success"><a href="add-report.php"> Add new Contract</a></button></th>
                 </tr>
             </thead>
             <tbody>
@@ -68,14 +68,14 @@ include('templates/header-logged-in.php');
                         <td align="center"><?php echo $row['final_price']; ?></td>
                         <td align="center">Sold</td>
                         <td align="center">
-                            <button id="delete-report"><a href="delete-report.php?contract_id=<?php echo $row['contract_id']; ?>">Delete</a></button>
+                            <button class="btn btn-danger mb-2 mt-2"><a href="delete-report.php?contract_id=<?php echo $row['contract_id']; ?>">Delete</a></button>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         <?php } ?>
         </table>
-        <button id="exportCSV"><a href="export-csv.php" target="_blank">Export as CSV</a></button>
+        <button class="btn btn-success"><a href="export-csv.php" target="_blank">Export as CSV</a></button>
 
 </div>
 

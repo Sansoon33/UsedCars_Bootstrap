@@ -1,6 +1,6 @@
 <!-- Universal footer -->
 
-<footer class="footer fixed-bottom mt-5">
+<footer id="orangeBorderTop" class="footer fixed-bottom mt-5">
 
     <div class="text-center foot">
         <div>© 2022 REGEX GROUP</div>

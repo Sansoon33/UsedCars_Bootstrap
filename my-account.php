@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id'])) {
                 $result2 = mysqli_query($con, $update);
 
                 if ($result2) {
-                    $status = "<p style='font-size:15pt; text-align:center;'>You have successfully updated your account. <a href='userdashboard.php'>Return to Dashboard here!</a></p>";
+                    $status = "<p style='font-size:15pt; text-align:center;'>You have successfully updated your account. <a href='user-dashboard.php'>Return to Dashboard here!</a></p>";
                     echo $status;
                 } else {
                     $status = "<p style='font-size:15pt text-align:center;'>Update unsuccessful.<a href='my-account.php'> Try again here.</a></p>";
@@ -87,8 +87,8 @@ if (isset($_SESSION['user_id'])) {
                     <input type="text" class="form-control" name="email" value="<?php echo $rows['email'] ?>" /><br />
                     <label for="password" class="form-label">Password: </label>
                     <input type="password" class="form-control" name="password" value="<?php echo $rows['password'] ?>" /><br /><br />
-                    <input type="submit" name="update" value="Update Account" class="bottom-btn" /><br />
-                    <a href="delete-account.php?user_id=<?php echo $rows['user_id'] ?>"><input type="button" value="Delete Account" class="bottom-btn back"></a>
+                    <input id="buttonMargins" type="submit" name="update" value="Update Account" class="btn btn-warning" /><br />
+                    <a href="delete-account.php?user_id=<?php echo $rows['user_id'] ?>"><input id="buttonMargins"  type="button" value="Delete Account" class="btn btn-danger"></a>
                 </form>
             <?php } ?>
         </div>

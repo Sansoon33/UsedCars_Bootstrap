@@ -27,7 +27,7 @@ $accounts = mysqli_query($con, $query) or die(mysqli_error($con));
     </p>
 
     <p class="text-center">You can view or delete any account.</p>
-    <table class="listings">
+    <table class="table table-striped table-hover listings">
         <thead>
             <tr>
                 <th><strong>User ID</strong></th>
@@ -53,7 +53,7 @@ $accounts = mysqli_query($con, $query) or die(mysqli_error($con));
                     <td align="center"><?php echo $rows['email']; ?></td>
                     <td align="center"><?php echo $rows['usertype']; ?></td>
                     <td align="center">
-                        <button id="delete-car"><a href="delete-user.php?user_id=<?php echo $rows['user_id']; ?>">Delete</a></button>
+                        <button class="btn btn-danger"><a href="delete-user.php?user_id=<?php echo $rows['user_id']; ?>">Delete</a></button>
                     </td>
                 </tr>
             <?php } ?>

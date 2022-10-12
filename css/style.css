@@ -17,7 +17,8 @@ footer {
 }
 
 body {
-    margin-bottom: 50px;
+    margin-top: 3.5rem;
+    margin-bottom: 10rem;
 }
 
 h1 {
@@ -28,8 +29,62 @@ h1 {
     border: 2px solid orange;
     padding: 2rem;
     box-shadow: 5px 5px lightskyblue;
+    margin: auto;
 }
 
-#helloWorld {
-    color: orange;
+#carForm2 {
+    border: 2px solid orange;
+    padding: 2rem;
+    box-shadow: 5px 5px lightskyblue;
+    margin: auto;
+    width: 350px;
+}
+
+
+#orangeBorderBot {
+    border-bottom: 2px solid orange;
+}
+
+#orangeBorderTop {
+    border-top: 2px solid orange;
+}
+
+button {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    box-shadow: 2px 2px lightskyblue;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    font-size: large;
+    text-decoration: none;
+    color: white;
+}
+
+#buttonMargins {
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px lightskyblue;
+}
+
+#buttonMarginsSelect {
+    margin: 2rem 2rem 2rem 2rem;
+    box-shadow: 2px 2px lightskyblue;
+    font-size: small;
+}
+
+.error {
+    color: red;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.success {
+    color: green;
+    font-size: small;
+    font-size: medium;
+    font-weight: bolder;
 }

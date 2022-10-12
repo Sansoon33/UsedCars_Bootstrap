@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg nav fixed-top">
+        <nav id="orangeBorderBot" class="navbar navbar-expand-lg nav fixed-top">
             <div class="container-fluid">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -54,7 +54,7 @@
                         #check if admin or user -> enable or disable links 
                         if ($row['usertype'] == 'admin') { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="admin-dashboard.php">Dashboard</a>
+                                <a class="navbar-brand" href="admin-dashboard.php">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="view-accounts.php">View All Accounts</a>
@@ -68,7 +68,7 @@
 
                         <?php } else { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="user-dashboard.php">Your Listings</a>
+                                <a class="navbar-brand" href="user-dashboard.php">Your Listings</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="available-listings.php">Available Listings</a>

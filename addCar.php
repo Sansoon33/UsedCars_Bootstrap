@@ -120,13 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $year = $_POST["year"];
 
-        //  if toggled to miles, converts miles to km and rounds up to nearest whole integer
-        if (isset($_POST["mileageSelect"])) {
-            $mileage = ceil($_POST["mileage"] * 1.60934);
-        } else {
-            $mileage = $_POST["mileage"];
-        }
-
         $color = $_POST["color"];
         $color = ucwords(strtolower($color), " \t\r\n'-");
 
@@ -141,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $addQuery = "INSERT INTO `cars`(user_id, make, model, `year`, mileage, color, car_condition, asking_price, date_posted) VALUES ('" . $user_id . "', '" . $make . "', '" . $model . "', '" . $year . "', '" . $mileage . "', '" . $color . "',  '" . $carCondition . "',  '" . $askPrice . "',  '" . $datePosted . "')";
 
         $result = mysqli_query($con, $addQuery);
-        $success = "Car added successfully! <a href='login.php'> Add another listing?</a>";
+        $success = "Car added successfully! <a href='user-dashboard.php'> Add another listing?</a>";
         $fail = "Unsuccessful registration, check your entries";
 
         $message = $result ? $success : $fail;
@@ -162,66 +155,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p class="text-center">
         Add a new car for sale to your account.
     </p>
-    <form name="addCar" onsubmit="return validateAddCarForm()"
-        action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+    <form id="carForm2" name="addCar" onsubmit="return validateAddCarForm()" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
 
-        <label for="make">Car Make: </label>
-        <input type="text" name="make" placeholder="Ex: Honda" value="<?= (isset($make)) ? $make : ''; ?>"><br>
-        <span id="makeErr" class="error"><?= $makeErr ?></span>
+        <label for="make" class="form-label">Car Make: </label><span id="makeErr" class="error"><?= $makeErr ?></span>
+        <input type="text" class="form-control" name="make" placeholder="Ex: Honda" value="<?= (isset($make)) ? $make : ''; ?>"><br>
 
 
-        <label for="model">Car Model: </label>
-        <input type="text" name="model" placeholder="Ex: Accord" value="<?= (isset($model)) ? $model : ''; ?>"><br><span
-            id="modelErr" class="error"><?= $modelErr ?></span>
+
+        <label for="model" class="form-label">Car Model: </label><span id="modelErr" class="error"><?= $modelErr ?></span>
+        <input type="text" class="form-control" name="model" placeholder="Ex: Accord" value="<?= (isset($model)) ? $model : ''; ?>"><br>
 
 
-        <label for="year">Year: </label>
-        <input type="text" name="year" placeholder="Ex: 1998" value="<?= (isset($year)) ? $year : ''; ?>"><br>
-        <span id="yearErr" class="error"><?= $yearErr ?></span>
+        <label for="year" class="form-label">Year: </label><span id="yearErr" class="error"><?= $yearErr ?></span>
+        <input type="text" class="form-control" name="year" placeholder="Ex: 1998" value="<?= (isset($year)) ? $year : ''; ?>"><br>
+        
 
 
-        <label for="mileage">Mileage: </label>
-        <input type="text" name="mileage" placeholder="Ex: 210000" value="<?= (isset($mileage)) ? $mileage : ''; ?>">
-
-        <!-- Mileage selector toggle: km/mi, km by default -->
-        <label class="switch">
-            <input type="checkbox" name="mileageSelect">
-            <span class="slider round"></span>
-        </label>
-
-        <br><span id="mileageErr" class="error"><?= $mileageErr ?></span>
-
-
-        <label for="color">Color: </label>
-        <input type="text" name="color" placeholder="Ex: Blue" value="<?= (isset($color)) ? $color : ''; ?>"><br>
-        <span id="colorErr" class="error"><?= $colorErr ?></span>
-
-
-        <label for="car_condition">Condition:</label>
-        <select name="car_condition" value="<?= (isset($carCondition)) ? $carCondition : ''; ?>">
-            <optgroup label="--Select Condition--">
-                <option value="Like New">Like New</option>
-                <option value="Very Good">Very Good</option>
-                <option value="Good">Good</option>
-                <option value="Fair">Fair</option>
-                <option value="Poor">Poor</option>
-                <option value="Very Poor">Very Poor</option>
-            </optgroup>
-        </select>
-        <!-- error technically not needed: -->
-        <span id="carConditionErr" class="error"><?= $carConditionErr ?></span>
+        <label for="mileage" class="form-label">Mileage: </label><span id="mileageErr" class="error"><?= $mileageErr ?></span>
+        <input type="text" class="form-control" name="mileage" placeholder="Ex: 210000" value="<?= (isset($mileage)) ? $mileage : ''; ?>">
         <br>
 
-        <label for="asking_price">Asking Price: </label>
-        <input type="text" name="asking_price" placeholder="Ex: 2400"
-            value="<?= (isset($askPrice)) ? $askPrice : ''; ?>" min="1" max="9999999"><br>
-        <span id="askPriceErr" class="error"><?= $askPriceErr ?></span>
+
+        <label for="color" class="form-label">Color: </label><span id="colorErr" class="error"><?= $colorErr ?></span>
+        <input type="text" class="form-control" name="color" placeholder="Ex: Blue" value="<?= (isset($color)) ? $color : ''; ?>"><br>
+        
+
+
+        <label for="car_condition" class="form-label">Condition:</label><span id="carConditionErr" class="error"><?= $carConditionErr ?></span>
+        <select id="buttonMarginsSelect" class="btn btn-secondary" name="car_condition" value="<?= (isset($carCondition)) ? $carCondition : ''; ?>">
+            <option value="Like New">Like New</option>
+            <option value="Very Good">Very Good</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+            <option value="Very Poor">Very Poor</option>
+        </select>
+        <!-- error technically not needed: -->
+        
+        <br>
+
+        <label for="asking_price" class="form-label">Asking Price: </label><span id="askPriceErr" class="error"><?= $askPriceErr ?></span>
+        <input type="text" class="form-control" name="asking_price" placeholder="Ex: 2400" value="<?= (isset($askPrice)) ? $askPrice : ''; ?>" min="1" max="9999999"><br>
+        
 
         <br>
         <!-- bottom-of-form buttons -->
-        <input type="submit" value="Add Car" class="bottom-btn confirm"><br>
+        <input id="buttonMargins" type="submit" value="Add Car" class="btn btn-success"><br>
 
-        <a href="userdashboard.php"><input type="button" value="Go Back" class="bottom-btn back"></a>
+        <a href="user-dashboard.php"><input id="buttonMargins" type="button" value="Go Back" class="btn btn-primary"></a>
 
     </form>
     <p class='addcarMsg'><?php echo $message; ?></p>

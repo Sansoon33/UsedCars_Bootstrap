@@ -51,7 +51,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['usertype'] == "admin") {
             echo $add_car;
         } else {
         ?>
-    <table class="listings">
+    <table class="table table-striped table-hover listings">
         <thead>
             <tr>
                 <th><strong>Make</strong></th>
@@ -79,7 +79,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['usertype'] == "admin") {
                 <td align="center"><?php echo "$".$rows['asking_price']; ?></td>
                 <td align="center"><?php echo $rows['date_posted']; ?></td>
                 <td align="center">
-                    <button id="delete-car"><a href="delete-car-admin.php?car_id=<?php echo $rows['car_id']; ?>">Delete</a></button>
+                    <button class="btn btn-danger mb-2 mt-2"><a href="delete-car-admin.php?car_id=<?php echo $rows['car_id']; ?>">Delete</a></button>
                 </td>
             </tr>
             <?php } ?>

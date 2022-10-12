@@ -18,7 +18,7 @@ include('templates/header-logged-in.php');
         You can purchase/view any of these active listings.
     </p>
 
-    <p class="text-center"><a href="userdashboard.php">Check your active listings here!</a></p>
+    <p class="text-center"><a href="user-dashboard.php">Check your active listings here!</a></p>
 
     <?php
         $user_id = $_SESSION['user_id'];
@@ -64,7 +64,7 @@ include('templates/header-logged-in.php');
                 <td align="center"><?php echo "$".$rows['asking_price']; ?></td>
                 <td align="center"><?php echo $rows['date_posted']; ?></td>
                 <td align="center">
-                    <button id="contact"><a href="contact.php?user_id=<?php echo $rows['user_id']; ?>">Contact Seller</a></button>
+                    <button class="btn btn-info"><a href="contact.php?user_id=<?php echo $rows['user_id']; ?>">Contact Seller</a></button>
                 </td>
             </tr>
             <?php } ?>

@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form id="databaseForm" action="" method="post">
       <div class="form-group">
         <h3 class="text-center">Info Table</h3>
-        <table class="listings">
+        <table class="table table-striped table-hover listings">
           <thead>
             <tr>
               <th><strong>User ID</strong></th>
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </table>
 
         <label for="userID" class="form-label">Select a User ID: </label>
-        <select name="userID">
+        <select id="buttonMarginsSelect" class="btn btn-secondary" name="userID">
           <?php
           $view_userIds = "SELECT `user_id` FROM `users`";
           $allUserIds = mysqli_query($con, $view_userIds);
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           ?>
         </select>
         <label for="carID" class="form-label">Select a Car ID: </label>
-        <select name="carID">
+        <select id="buttonMarginsSelect" class="btn btn-secondary" name="carID">
           <?php
           $view_carIds = "SELECT `car_id` FROM `cars`";
           $allCarIds = mysqli_query($con, $view_carIds);
@@ -143,13 +143,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br><br>";
         echo "$success";
         echo "$failure";
+        echo "<br><br>";
         ?>
       </div>
 
       <div class="form-group">
-        <input id="generate-report" type="submit" name="submit" value="Add Contract to Report">
+        <input class="btn btn-success" type="submit" name="submit" value="Add Contract to Report">
       </div>
-      <button id="back-b" class="mt-3 mb-3"><a href="view-report.php"> Back </a></button>
+      <button class="btn btn-primary mt-3 mb-3"><a href="view-report.php"> Back </a></button>
     </form>
   </div>
 

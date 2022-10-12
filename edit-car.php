@@ -48,30 +48,30 @@ $rows = mysqli_fetch_assoc($result);
 
         } else {
         ?>
-        <form name="form" method="post" action="">
+        <form id="carForm2" name="form" method="post" action="">
             <input type="hidden" name="new" value="1" />
 
-            <label for="">Make:</label>
-            <input type="text" name="make" required value="<?php echo $rows['make']; ?>" />
+            <label for="make" class="form-label">Make:</label>
+            <input type="text" class="form-control" name="make" required value="<?php echo $rows['make']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
-            <label for="">Model:</label>
-            <input type="text" name="model" required value="<?php echo $rows['model']; ?>" />
+            <label for="model" class="form-label">Model:</label>
+            <input type="text" class="form-control" name="model" required value="<?php echo $rows['model']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
-            <label for="">Year:</label>
-            <input type="text" name="year" required value="<?php echo $rows['year']; ?>" />
+            <label for="year" class="form-label">Year:</label>
+            <input type="text" class="form-control" name="year" required value="<?php echo $rows['year']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
-            <label for="">Mileage:</label>
-            <input type="text" name="mileage" required value="<?php echo $rows['mileage']; ?>" />
+            <label for="mileage" class="form-label">Mileage:</label>
+            <input type="text" class="form-control" name="mileage" required value="<?php echo $rows['mileage']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
-            <label for="">Color:</label>
-            <input type="text" name="color" required value="<?php echo $rows['color']; ?>" />
+            <label for="color" class="form-label">Color:</label>
+            <input type="text" class="form-control" name="color" required value="<?php echo $rows['color']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
-            <label for="">Condition:</label>
+            <label for="condition" class="form-label">Condition:</label>
             <select name="condition">
                 <optgroup label="--Select Condition--">
                     <option value="<?php echo $rows['car_condition'] ?>" hidden><?php echo $rows['car_condition'] ?></option>
@@ -84,8 +84,8 @@ $rows = mysqli_fetch_assoc($result);
                 </optgroup>
             </select>
             <br>
-            <label for="">Asking Price</label>
-            <input type="text" name="price" required value="<?php echo $rows['asking_price']; ?>" />
+            <label for="price" class="form-label">Asking Price</label>
+            <input type="text" class="form-control" name="price" required value="<?php echo $rows['asking_price']; ?>" />
             <span class="error"><?php  ?></span>
             <br>
 

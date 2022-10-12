@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg nav fixed-top">
+        <nav id="orangeBorderBot" class="navbar navbar-expand-lg nav fixed-top">
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="public-listings.php" title="View All Active Listings">Public Listings</a>

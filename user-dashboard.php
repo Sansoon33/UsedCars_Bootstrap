@@ -84,9 +84,9 @@ if (isset($_SESSION['user_id'])) {
                 <td align="center"><?php echo $rows['car_condition']; ?></td>
                 <td align="center"><?php echo "$" . $rows['asking_price']; ?></td>
                 <td align="center"><?php echo $rows['date_posted']; ?></td>
-                <td align="center">
-                    <button id="edit-car"><a href="edit-car.php?car_id=<?php echo $rows['car_id']; ?>">Edit</a></button>
-                    <button id="delete-car"><a
+                <td  align="center">
+                    <button class="btn btn-warning"><a href="edit-car.php?car_id=<?php echo $rows['car_id']; ?>">Edit</a></button>
+                    <button class="btn btn-danger"><a
                             href="delete-car.php?car_id=<?php echo $rows['car_id']; ?>">Delete</a></button>
                 </td>
             </tr>
